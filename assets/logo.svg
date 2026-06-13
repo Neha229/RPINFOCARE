@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="48" viewBox="0 0 160 48" fill="none">
+  <rect width="160" height="48" rx="8" fill="white"/>
+  <g transform="translate(8,6)">
+    <circle cx="22" cy="18" r="14" fill="url(#g)"/>
+    <defs>
+      <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#1fb48a"/>
+        <stop offset="1" stop-color="#0aa3b5"/>
+      </linearGradient>
+    </defs>
+    <text x="48" y="26" font-family="Poppins, sans-serif" font-weight="700" font-size="18" fill="#07143a">RP INFOCARE</text>
+  </g>
+</svg>

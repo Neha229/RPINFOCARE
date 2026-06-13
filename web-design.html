@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Design & Development — RP INFOCARE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .web-design-hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, rgba(10, 163, 181, 0.1) 0%, rgba(31, 180, 138, 0.08) 100%);
+    }
+
+    .web-design-hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .web-design-hero-copy h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 20px;
+      line-height: 1.2;
+    }
+
+    .web-design-hero-copy .highlight {
+      color: var(--accent);
+    }
+
+    .web-design-hero-copy p {
+      font-size: 16px;
+      color: #596773;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .web-design-hero-image {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9fb 100%);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      box-shadow: 0 30px 60px rgba(10, 163, 181, 0.12);
+      text-align: center;
+      color: #0aa3b5;
+    }
+    .hero-animation {
+        order: 2;
+        width: 100%;
+    }
+    .hero-animation video {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    .web-design-hero-image svg {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(7, 20, 58, 0.06);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(10, 163, 181, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(10, 163, 181, 0.15);
+      border-color: var(--accent);
+    }
+
+    .service-card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e8f7fb, #f0faf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 14px;
+    }
+
+    .service-card p {
+      color: #596773;
+      line-height: 1.7;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 16px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 4px;
+    }
+
+    .section-header p {
+      color: #596773;
+      font-size: 16px;
+      max-width: 700px;
+      line-height: 1.8;
+      margin-top: 30px;
+    }
+
+    .web-section {
+      padding: 80px 0;
+    }
+
+    .web-section:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .feature-item {
+      background: #fff;
+      padding: 24px;
+      border-radius: 18px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 8px 20px rgba(7, 20, 58, 0.04);
+    }
+
+    .feature-item h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+
+    .feature-item p {
+      color: #596773;
+      line-height: 1.7;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .service-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .showcase-content h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 20px;
+    }
+
+    .showcase-content p {
+      color: #596773;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+    .showcase{
+      width: 100%;
+            aspect-ratio: 1.65 / 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            background-color: #07163c;
+            display: flex;
+    }
+    .showcase video {
+       width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+    }
+
+    .tech-icons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .tech-badge {
+      background: #e8f7fb;
+      color: var(--accent);
+      padding: 10px 16px;
+      border-radius: 18px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .web-design-hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .service-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .web-design-hero-copy h1 {
+        font-size: 36px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 32px;
+      }
+
+      .web-design-hero {
+        padding: 60px 0 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <img src="rpinfocare-logo.png" alt="RP InfoCare logo">
+      </a>
+      <h4>RP INFOCARE</h4>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="cta enquire">Get Started</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <div id="enquiryPopup" class="popup-overlay">
+    <div class="popup-form">
+      <span class="close-btn">&times;</span>
+      <h2>Enquiry/Consult Form</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d3450d68-0a4b-4a4b-9056-514d453a97d4">
+        <input type="hidden" name="subject" value="New Web Design & Development Enquiry">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="description" rows="5" placeholder="Describe your requirement..." required></textarea>
+        <button type="submit" class="submit-btn">Submit Enquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function(){
+        mainNav.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(){
+            mainNav.classList.remove('active');
+        });
+    });
+
+    // Enquiry Form Popup
+    const enquiryBtn = document.querySelector('.enquire');
+    const popup = document.getElementById('enquiryPopup');
+    const closeBtn = document.querySelector('.close-btn');
+
+    enquiryBtn.addEventListener('click', function(){
+        popup.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', function(){
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(e){
+        if(e.target === popup){
+            popup.style.display = 'none';
+        }
+    });
+  </script>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="web-design-hero">
+      <div class="container">
+        <div class="web-design-hero-content">
+          <div class="web-design-hero-copy">
+            <span style="display: inline-block; background: #e8f7fb; color: var(--accent); padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 13px; margin-bottom: 20px;">
+              🚀 WEB SOLUTIONS
+            </span>
+            <h1>Web Design &amp; <span class="highlight">Development</span></h1>
+            <p>We specialize in creating interactive, user-friendly websites that combine cutting-edge technology, creative design and personalized experiences to elevate your online presence.</p>
+            <p>Our flexible web design services are tailored to meet your business needs, helping to boost conversion rates while effectively showcasing your portfolio and services.</p>
+          </div>
+          <div class="hero-animation">
+           <video autoplay muted loop playsinline>
+        <source src="W1.mp4" type="video/mp4">
+    </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Development Services Section -->
+    <section class="web-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Web Development Services</h2>
+          <p>Every website we develop is thoughtfully strategized and crafted using the latest technologies, ensuring it appeals to diverse audiences. By focusing on hyper-personalization and engaging user experiences, our designs enhance brand value and leave a lasting impression on your visitors.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-icon">📄</div>
+            <h3>Static Web Design</h3>
+            <p>We create sleek, professional static websites with fast loading, modern designs, ensuring simplicity, functionality, and engaging user experiences.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">⚡</div>
+            <h3>Dynamic Web Design</h3>
+            <p>Dynamic websites offer interactive features, real-time updates, user-friendly interfaces and seamless functionality, delivering highly personalized and engaging experiences.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">🎨</div>
+            <h3>Interactive UI &amp; UX</h3>
+            <p>Emphasizes creating user-friendly interfaces and experiences through research, prototyping, and usability testing for optimal results.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">🔧</div>
+            <h3>Maintenance &amp; Support</h3>
+            <p>Your website is a crucial asset for your business. We provide comprehensive maintenance and support services tailored to meet evolving needs.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">💳</div>
+            <h3>Payment Gateway Integration</h3>
+            <p>Payment gateway service helps securely process online payments acting as an intermediary between your website, customer and financial institution.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">⚙️</div>
+            <h3>Back-End Support</h3>
+            <p>The backbone of any website lies in its back-end infrastructure. A robust and efficient back-end ensures seamless functionality and excellent performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Application Development Section -->
+    <section class="web-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Web Application Development</h2>
+          <p>Our web application development services encompass a variety of offerings designed to create, maintain, and enhance web-based applications. We utilize cutting-edge technologies and industry best practices to deliver high-performance, secure, and scalable solutions.</p>
+        </div>
+
+        <div class="service-showcase">
+          <div class="showcase-content">
+            <h3>E-Commerce Applications</h3>
+            <p>We specialize in e-commerce application development, offering tailored solutions to help businesses establish and grow their online presence. Our goal is to create user-friendly, feature-rich, and secure e-commerce platforms that provide seamless shopping experiences and drive sales.</p>
+            <div class="tech-icons">
+              <span class="tech-badge">Shopping Cart</span>
+              <span class="tech-badge">Secure Checkout</span>
+              <span class="tech-badge">Inventory Management</span>
+            </div>
+          </div>
+          <div class="showcase">
+            <video autoplay muted loop playsinline>
+        <source src="W2.mp4" type="video/mp4">
+    </video>
+          </div>
+        </div>
+
+        <div class="service-showcase" style="margin-top: 60px;">
+          <div class="showcase" style="order: -1;">
+             <video autoplay muted loop playsinline>
+        <source src="W3.mp4" type="video/mp4">
+    </video>
+          </div>
+          <div class="showcase-content">
+            <h3>Enterprise Web Applications</h3>
+            <p>We specialize in enterprise web application development, providing tailored solutions to streamline internal workflows, enhance productivity, and improve overall operational efficiency. Perfect for large organizations with complex requirements.</p>
+            <div class="tech-icons">
+              <span class="tech-badge">Scalability</span>
+              <span class="tech-badge">Security</span>
+              <span class="tech-badge">Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-showcase" style="margin-top: 60px;">
+          <div class="showcase-content">
+            <h3>Single-Page Applications</h3>
+            <p>We can help you create a modern, responsive, and high-performance SPA tailored to your business needs. Exceptional user experience with faster performance, seamless navigation, and reduced load times. Perfect for dashboards, social networks, and dynamic content platforms.</p>
+            <div class="tech-icons">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Vue.js</span>
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">Fast Performance</span>
+            </div>
+          </div>
+          <div class="showcase">
+            <video autoplay muted loop playsinline>
+              <source src="W4.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="service-showcase" style="margin-top: 60px;">
+          <div class="showcase" style="order: -1;">
+            <video autoplay muted loop playsinline>
+              <source src="W5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="showcase-content">
+            <h3>CMS-Based Applications</h3>
+            <p>Applications provide businesses with an easy and flexible way to manage, organize, and update content on their websites or applications without needing extensive technical knowledge. CMS-based applications offer powerful solutions for creating dynamic websites, blogs, e-commerce platforms, and corporate portals.</p>
+            <div class="tech-icons">
+              <span class="tech-badge">WordPress</span>
+              <span class="tech-badge">Drupal</span>
+              <span class="tech-badge">Joomla</span>
+              <span class="tech-badge">Custom CMS</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #93c1e3; border-radius: 20px; padding: 40px; margin-top: 60px; box-shadow: 0 10px 30px rgba(7, 20, 58, 0.06);">
+          <h3 style="font-family: 'Poppins', sans-serif; font-size: 24px; color: var(--navy); margin: 0 0 20px;">Web Application Maintenance &amp; Support</h3>
+          <p style="color: #596773; line-height: 1.8; margin: 0;">We continuously monitor your web application for opportunities to add new features or improve existing functionality based on user feedback and market trends. Our dedicated support team ensures your application runs smoothly with minimal downtime.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UI/UX Design Services Section -->
+    <section class="web-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>UI/UX Design Services</h2>
+          <p>Our UI/UX Design Services focus on crafting seamless, intuitive, and aesthetically pleasing experiences for users across digital platforms. We help businesses transform their ideas into engaging, usable, and effective digital products.</p>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <h4>🎨 UI Design</h4>
+            <p>Our UI Design Services are focused on crafting visually engaging, user-friendly, and interactive interfaces that align with your brand, provide a great user experience, and drive engagement and conversions.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>👥 UX Design</h4>
+            <p>Our UX Design Services ensure that your users have a positive and satisfying interaction with your product. From understanding user needs to prototyping and testing, we focus on every aspect of the user experience.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>🔍 SEO-Friendly Design</h4>
+            <p>Our SEO-Friendly Design Services focus on integrating SEO best practices directly into the design and development process, ensuring your website performs well in search engine rankings.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>📐 Sitemap &amp; Wire Framing</h4>
+            <p>We help define the structure, layout, and functionality of a site, guiding both design teams and developers in creating an effective user experience and ensuring project success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-banner">
+      <div class="quote-content">
+        <p>"Let us help you build a website that drives results and highlights your business in the best light."</p>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section style="padding: 80px 0; text-align: center; background: #f9fafb;">
+      <div class="container">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 800; color: var(--navy); margin-bottom: 20px;">Ready to Get Started?</h2>
+        <p style="color: #596773; font-size: 16px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Let's discuss how we can create the perfect digital solution for your business. Our team is ready to help you succeed online.</p>
+        <button class="cta enquire" style="font-size: 16px; padding: 14px 32px; margin: 0;">
+          Schedule a Consultation
+        </button>
+      </div>
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const popup = document.getElementById("enquiryPopup");
+
+    document.querySelectorAll(".enquire").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            popup.style.display = "flex";
+        });
+    });
+
+    document.querySelector(".close-btn").addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+
+    popup.addEventListener("click", function(e) {
+        if (e.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+
+});
+</script>  
+    </section>
+  </main>
+
+ <footer>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <section class="rp-footer-section">
+    <div class="footer-container">
+        
+        <div class="footer-brand">
+            <div class="logo-container">
+                <img src="rpinfocare-logo.png" alt="RP Infocare Logo" onerror="this.src='https://via.placeholder.com/80x80?text=Logo'">
+            </div>
+            <h2>RP INFOCARE</h2>
+            <p>We are dedicated IT professionals crafting bespoke digital solutions for a connected world. Your vision, our architecture.</p>
+            <div class="social-icons">
+                <a href="#" class="icon-btn" aria-label="Website"><i class="fas fa-globe"></i></a>
+                <a href="#" class="icon-btn" aria-label="Like"><i class="fas fa-thumbs-up"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="web-design.html">Website Design & development</a></li>
+                <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                <li><a href="digital-marketing.html">Digital marketing</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="social-row">
+        <a href="mailto:admin@rpinfocare.com" class="icon-circle brand-gmail"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:918748005495" class="icon-circle brand-phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/918748005495" class="icon-circle brand-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+        </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+        &copy; 2026 RP INFOCARE Pvt Ltd. All rights reserved.
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    .rp-footer-section {
+        background-color: #001242; /* Exact dark blue background */
+        font-family: 'Inter', sans-serif;
+        padding: 80px 8% 30px 8%;
+        color: #b0c4de;
+    }
+
+    .rp-footer-section .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- Brand Column --- */
+    .rp-footer-section .logo-container {
+        background-color: #ffffff;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-bottom: 25px;
+        padding: 5px;
+    }
+
+    .rp-footer-section .logo-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .rp-footer-section .footer-brand h2 {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 25px;
+    }
+
+    .rp-footer-section .footer-brand p {
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 30px;
+        max-width: 380px;
+    }
+
+    .rp-footer-section .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .rp-footer-section .icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background 0.3s ease;
+    }
+
+    .rp-footer-section .icon-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Links/Services Columns --- */
+    .rp-footer-section .footer-links h3 {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .rp-footer-section .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .rp-footer-section .footer-links ul li {
+        margin-bottom: 18px;
+    }
+
+    .rp-footer-section .footer-links ul li a {
+        color: #a3b8cc;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 300;
+        transition: color 0.3s ease;
+    }
+
+    .rp-footer-section .footer-links ul li a:hover {
+        color: #ffffff;
+    }
+
+    /* --- Centered Bottom Copyright --- */
+    .rp-footer-section .footer-divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin: 60px 0 25px 0;
+    }
+
+     .rp-footer-section .social-row{
+       display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .rp-footer-section .icon-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 16px;
+      color: #ffffff;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+   .rp-footer-section .icon-circle:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Precise Color Code Assignments for Icons */
+    .rp-footer-section .icon-circle.brand-gmail { background-color: #3b4766; } /* Matte Blue-Grey Circle */
+    .rp-footer-section .icon-circle.brand-phone { background-color: #3b4766; } 
+    .rp-footer-section .icon-circle.brand-whatsapp { background-color: #1ed760; } /* Vibrant Green Circle */
+    .rp-footer-section .icon-circle.brand-generic { background-color: rgba(255, 255, 255, 0.1); }
+
+    .rp-footer-section .footer-bottom {
+        text-align: center; /* Centers the alignment perfectly */
+        font-size: 14px;
+        font-weight: 300;
+        color: #7e95ad;
+    }
+
+    /* --- Mobile Responsive Rules --- */
+    @media (max-width: 768px) {
+        .rp-footer-section .footer-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .rp-footer-section {
+            padding: 50px 5% 25px 5%;
+        }
+    }
+</style>
+</footer>
+
+  <!-- Floating contact widgets -->
+  <a href="https://wa.me/918748005495?text=Hello%20there" class="floating-icon floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+  </a>
+
+ 
+  <script src="js/script.js"></script>
+</body>
+</html>

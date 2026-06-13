@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mobile App Development — RP INFOCARE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .mobile-app-hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, rgba(10, 163, 181, 0.1) 0%, rgba(31, 180, 138, 0.08) 100%);
+    }
+
+    .mobile-app-hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .mobile-app-hero-copy h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 20px;
+      line-height: 1.2;
+    }
+
+    .mobile-app-hero-copy .highlight {
+      color: var(--accent);
+    }
+
+    .mobile-app-hero-copy p {
+      font-size: 16px;
+      color: #596773;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .hero-animation {
+        order: 2;
+        width: 100%;
+    }
+    .hero-animation video {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    
+
+    .mobile-app-hero-image svg {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(7, 20, 58, 0.06);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(10, 163, 181, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(10, 163, 181, 0.15);
+      border-color: var(--accent);
+    }
+
+    .service-card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e8f7fb, #f0faf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 14px;
+    }
+
+    .service-card p {
+      color: #596773;
+      line-height: 1.7;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 16px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 4px;
+    }
+
+    .section-header p {
+      color: #596773;
+      font-size: 16px;
+      max-width: 700px;
+      line-height: 1.8;
+      margin-top: 30px;
+    }
+
+    .app-section {
+      padding: 80px 0;
+    }
+
+    .app-section:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .feature-item {
+      background: #fff;
+      padding: 24px;
+      border-radius: 18px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 8px 20px rgba(7, 20, 58, 0.04);
+    }
+
+    .feature-item h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+
+    .feature-item p {
+      color: #596773;
+      line-height: 1.7;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .service-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .showcase-content h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 20px;
+    }
+
+    .showcase-content p {
+      color: #596773;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .showcase-image {
+      background: linear-gradient(135deg, #e8f7fb 0%, #f0faf8 100%);
+      border-radius: 20px;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 40px rgba(10, 163, 181, 0.1);
+    }
+
+    .tech-icons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .tech-badge {
+      background: #e8f7fb;
+      color: var(--accent);
+      padding: 10px 16px;
+      border-radius: 18px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .phone-mockup {
+      display: inline-block;
+      width: 200px;
+      height: 350px;
+      background: #000;
+      border-radius: 40px;
+      padding: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .phone-mockup::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 25px;
+      background: #000;
+      border-radius: 0 0 25px 25px;
+      z-index: 10;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #e8f7fb 0%, #f0faf8 100%);
+      border-radius: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+
+    .platform-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .platform-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(7, 20, 58, 0.06);
+      text-align: center;
+      border-top: 4px solid var(--accent);
+    }
+
+    .platform-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 20px 0;
+    }
+
+    .platform-card .features {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .platform-card .features li {
+      padding: 8px 0;
+      color: #596773;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .platform-card .features li:last-child {
+      border-bottom: none;
+    }
+
+    .platform-card .features li::before {
+      content: '✓ ';
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mobile-app-hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .service-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .platform-compare {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-app-hero-copy h1 {
+        font-size: 36px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 32px;
+      }
+
+      .mobile-app-hero {
+        padding: 60px 0 40px;
+      }
+
+      .phone-mockup {
+        width: 150px;
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <img src="rpinfocare-logo.png" alt="RP InfoCare logo">
+      </a>
+      <h4>RP INFOCARE</h4>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="cta enquire">Get Started</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <div id="enquiryPopup" class="popup-overlay">
+    <div class="popup-form">
+      <span class="close-btn">&times;</span>
+      <h2>Enquiry/Consult Form</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d3450d68-0a4b-4a4b-9056-514d453a97d4">
+        <input type="hidden" name="subject" value="New Mobile App Development Enquiry">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="description" rows="5" placeholder="Describe your app idea..." required></textarea>
+        <button type="submit" class="submit-btn">Submit Enquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function(){
+        mainNav.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(){
+            mainNav.classList.remove('active');
+        });
+    });
+
+    // Enquiry Form Popup
+    const enquiryBtn = document.querySelector('.enquire');
+    const popup = document.getElementById('enquiryPopup');
+    const closeBtn = document.querySelector('.close-btn');
+
+    enquiryBtn.addEventListener('click', function(){
+        popup.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', function(){
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(e){
+        if(e.target === popup){
+            popup.style.display = 'none';
+        }
+    });
+  </script>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="mobile-app-hero">
+      <div class="container">
+        <div class="mobile-app-hero-content">
+          <div class="mobile-app-hero-copy">
+            <span style="display: inline-block; background: #e8f7fb; color: var(--accent); padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 13px; margin-bottom: 20px;">
+              📱 MOBILE SOLUTIONS
+            </span>
+            <h1>Mobile App <span class="highlight">Development</span></h1>
+            <p>We develop powerful, scalable, and cost-effective mobile applications tailored to fuel your business growth. Our team collaborates closely with you to understand your requirements, vision, goals, budget, and timeline.</p>
+            <p>From organizational assessment and tech stack consultancy to design, development, testing, and maintenance, we deliver bespoke mobile apps powered by advanced technologies.</p>
+          </div>
+          <div class="hero-animation">
+           <video autoplay muted loop playsinline>
+        <source src="M1.mp4" type="video/mp4">
+    </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile App Development Services Section -->
+    <section class="app-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Mobile Services</h2>
+          <p>We specialize in upgrading outdated apps to modern versions, helping businesses achieve higher ROI and seamless operations across all platforms.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-icon">💬</div>
+            <h3>Web App Consultation</h3>
+            <p>Expert Web Application Development Consultation to help businesses navigate the complexities of building robust, scalable, and efficient applications aligned with your goals.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">🍎</div>
+            <h3>Custom iOS &amp; Android</h3>
+            <p>Custom iOS and Android App Development services tailored to meet your unique business needs. High-quality apps designed for exceptional user experience and seamless performance.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">⚡</div>
+            <h3>Native Platform Apps</h3>
+            <p>Native Mobile App Development for iOS and Android. Leveraging platform-specific tools for superior performance and deep device integration with seamless user experiences.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">🌉</div>
+            <h3>Cross-Platform Development</h3>
+            <p>Cross-Platform App Development enabling your app to run seamlessly on both iOS and Android. Cost-efficient, high-performing, and scalable with native-like experiences.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>UI/UX Design Services that transform your app into engaging, user-friendly, and visually appealing experiences. Combining creativity with functionality for brand alignment.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">🔄</div>
+            <h3>App Modernization</h3>
+            <p>App Modernization Services that transform legacy applications into high-performing, scalable solutions. Enhanced functionality, performance, and compatibility for future needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Comparison Section -->
+    <section class="app-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>iOS vs Android Development</h2>
+          <p>Understanding the differences helps us choose the perfect platform for your business needs</p>
+        </div>
+
+        <div class="platform-compare">
+          <div class="platform-card">
+            <div style="font-size: 60px;">🍎</div>
+            <h4>iOS Development</h4>
+            <ul class="features">
+              <li>Premium User Base</li>
+              <li>Higher Monetization</li>
+              <li>Swift Technology</li>
+              <li>App Store Ecosystem</li>
+              <li>Security First</li>
+              <li>Seamless Integration</li>
+            </ul>
+          </div>
+
+          <div class="platform-card">
+            <div style="font-size: 60px;">🤖</div>
+            <h4>Android Development</h4>
+            <ul class="features">
+              <li>Large User Base</li>
+              <li>Open Ecosystem</li>
+              <li>Java/Kotlin</li>
+              <li>Google Play Store</li>
+              <li>Flexible Customization</li>
+              <li>Wide Device Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- UI/UX Design Section -->
+    <section class="app-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>UI/UX Design Excellence</h2>
+          <p>We specialize in delivering UI/UX Design Services that transform your digital products into engaging, user-friendly, and visually appealing experiences.</p>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <h4>🎨 Visual Design</h4>
+            <p>Creating visually stunning interfaces that align with your brand identity. We combine modern design trends with timeless principles for beautiful, functional apps.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>👥 User Research</h4>
+            <p>Deep understanding of user behavior and needs. We conduct thorough research to inform design decisions and create apps people love to use.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>🔄 Prototyping</h4>
+            <p>Interactive prototypes that bring your vision to life before development. Test concepts early and gather feedback to refine the user experience.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4>✅ Usability Testing</h4>
+            <p>Rigorous testing with real users to identify pain points and optimize interactions. We ensure your app delivers an exceptional user experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Modernization Section -->
+    <section class="app-section">
+      <div class="container">
+        <div class="service-showcase" style="margin-top: 40px;">
+          <div class="hero-animation">
+           <video autoplay muted loop playsinline>
+        <source src="M2.mp4" type="video/mp4">
+    </video>
+          </div>
+          <div class="showcase-content">
+            <h3>App Modernization</h3>
+            <p>At RP Info Care, we specialize in App Modernization Services that transform your legacy applications into high-performing, scalable, and modern solutions. By leveraging advanced technologies, we enhance your app's functionality, performance, and compatibility, ensuring it meets current and future business needs.</p>
+            <p>Breathe new life into your existing apps and keep them competitive in today's market with our comprehensive modernization approach.</p>
+            <div class="tech-icons">
+              <span class="tech-badge">Technology Update</span>
+              <span class="tech-badge">Performance Boost</span>
+              <span class="tech-badge">Security Enhanced</span>
+              <span class="tech-badge">Future Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="app-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Development Process</h2>
+          <p>From concept to launch and beyond, we follow a structured approach</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-icon">1️⃣</div>
+            <h3>Discovery &amp; Planning</h3>
+            <p>We understand your business goals, target audience, and technical requirements to create a comprehensive project roadmap.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">2️⃣</div>
+            <h3>Design &amp; Prototyping</h3>
+            <p>Creating beautiful, intuitive designs with interactive prototypes. We validate concepts through user testing before development begins.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">3️⃣</div>
+            <h3>Development &amp; Testing</h3>
+            <p>Agile development with continuous testing. We build robust apps following best practices and industry standards for quality assurance.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">4️⃣</div>
+            <h3>Deployment &amp; Launch</h3>
+            <p>Seamless app store submission and launch management. We handle all technical aspects to ensure a successful market entry.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">5️⃣</div>
+            <h3>Support &amp; Maintenance</h3>
+            <p>Ongoing monitoring, updates, and enhancements. We provide dedicated support to keep your app running smoothly and up-to-date.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">6️⃣</div>
+            <h3>Growth &amp; Optimization</h3>
+            <p>Analytics-driven improvements and feature additions. We continuously optimize based on user feedback and market trends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-banner" style="margin-bottom: 50px;">
+      <div class="quote-content">
+        <p>"Transform your vision into a powerful mobile app that drives user engagement and business success."</p>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    
+
+  <footer>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <section class="rp-footer-section">
+    <div class="footer-container">
+        
+        <div class="footer-brand">
+            <div class="logo-container">
+                <img src="rpinfocare-logo.png" alt="RP Infocare Logo" onerror="this.src='https://via.placeholder.com/80x80?text=Logo'">
+            </div>
+            <h2>RP INFOCARE</h2>
+            <p>We are dedicated IT professionals crafting bespoke digital solutions for a connected world. Your vision, our architecture.</p>
+            <div class="social-icons">
+                <a href="#" class="icon-btn" aria-label="Website"><i class="fas fa-globe"></i></a>
+                <a href="#" class="icon-btn" aria-label="Like"><i class="fas fa-thumbs-up"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="web-design.html">Website Design & development</a></li>
+                <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                <li><a href="digital-marketing.html">Digital marketing</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="social-row">
+        <a href="mailto:admin@rpinfocare.com" class="icon-circle brand-gmail"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:918748005495" class="icon-circle brand-phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/918748005495" class="icon-circle brand-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+        </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+        &copy; 2026 RP INFOCARE Pvt Ltd. All rights reserved.
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    .rp-footer-section {
+        background-color: #001242; /* Exact dark blue background */
+        font-family: 'Inter', sans-serif;
+        padding: 80px 8% 30px 8%;
+        color: #b0c4de;
+    }
+
+    .rp-footer-section .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- Brand Column --- */
+    .rp-footer-section .logo-container {
+        background-color: #ffffff;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-bottom: 25px;
+        padding: 5px;
+    }
+
+    .rp-footer-section .logo-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .rp-footer-section .footer-brand h2 {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 25px;
+    }
+
+    .rp-footer-section .footer-brand p {
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 30px;
+        max-width: 380px;
+    }
+
+    .rp-footer-section .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .rp-footer-section .icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background 0.3s ease;
+    }
+
+    .rp-footer-section .icon-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Links/Services Columns --- */
+    .rp-footer-section .footer-links h3 {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .rp-footer-section .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .rp-footer-section .footer-links ul li {
+        margin-bottom: 18px;
+    }
+
+    .rp-footer-section .footer-links ul li a {
+        color: #a3b8cc;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 300;
+        transition: color 0.3s ease;
+    }
+
+    .rp-footer-section .footer-links ul li a:hover {
+        color: #ffffff;
+    }
+
+    /* --- Centered Bottom Copyright --- */
+    .rp-footer-section .footer-divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin: 60px 0 25px 0;
+    }
+
+     .rp-footer-section .social-row{
+       display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .rp-footer-section .icon-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 16px;
+      color: #ffffff;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+   .rp-footer-section .icon-circle:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Precise Color Code Assignments for Icons */
+    .rp-footer-section .icon-circle.brand-gmail { background-color: #3b4766; } /* Matte Blue-Grey Circle */
+    .rp-footer-section .icon-circle.brand-phone { background-color: #3b4766; } 
+    .rp-footer-section .icon-circle.brand-whatsapp { background-color: #1ed760; } /* Vibrant Green Circle */
+    .rp-footer-section .icon-circle.brand-generic { background-color: rgba(255, 255, 255, 0.1); }
+
+    .rp-footer-section .footer-bottom {
+        text-align: center; /* Centers the alignment perfectly */
+        font-size: 14px;
+        font-weight: 300;
+        color: #7e95ad;
+    }
+
+    /* --- Mobile Responsive Rules --- */
+    @media (max-width: 768px) {
+        .rp-footer-section .footer-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .rp-footer-section {
+            padding: 50px 5% 25px 5%;
+        }
+    }
+</style>
+</footer>
+
+  <!-- Floating contact widgets -->
+  <a href="https://wa.me/918748005495?text=Hello%20there" class="floating-icon floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+  </a>
+
+ 
+  <script src="js/script.js"></script>
+</body>
+</html>
