@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Welcome to RP Infocare, your trusted partner for innovative IT solutions, website development, mobile apps, and digital marketing services designed to grow your business.">
     <title>RP Infocare | Expert IT Solutions & Technology Services</title>
+    <link rel="icon" href="rpinfocare-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="rpinfocare-logo.png">
+    <link rel="canonical" href="https://www.rpinfocare.com/">
+    <meta property="og:site_name" content="RP Infocare">
+    <meta property="og:title" content="RP Infocare | Expert IT Solutions & Technology Services">
+    <meta property="og:description" content="Welcome to RP Infocare, your trusted partner for innovative IT solutions, website development, mobile apps, and digital marketing services designed to grow your business.">
+    <meta property="og:image" content="https://www.rpinfocare.com/rpinfocare-logo.png">
+    <meta property="og:url" content="https://www.rpinfocare.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.rpinfocare.com/rpinfocare-logo.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "RP Infocare",
+        "url": "https://www.rpinfocare.com/",
+        "logo": "https://www.rpinfocare.com/rpinfocare-logo.png",
+        "sameAs": [
+          "https://www.instagram.com/rpinfocare/"
+        ]
+      }
+    </script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -2086,6 +2108,65 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="footer-bottom">
         &copy; 2024 RP INFOCARE Pvt Ltd. All rights reserved.
     </div>
+
+    <div class="mobile-footer-bar" aria-label="Mobile action bar">
+      
+       <a href="#" id="enquiryBtn" class="footer-action footer-action-book" aria-label="Enquiry Now">
+    <i class="fa-solid fa-calendar-days"></i>
+    <span>Enquiry Now</span>
+</a>
+
+<div id="enquiryPopup" class="popup-overlay">
+    <div class="popup-form">
+        <span class="close-btn">&times;</span>
+        <h2>Enquiry/Consult Form</h2>
+        
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d3450d68-0a4b-4a4b-9056-514d453a97d4">
+            <input type="hidden" name="subject" value="New Website Enquiry/Consultation">
+
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <textarea name="description" rows="5" placeholder="Describe your requirement..." required></textarea>
+
+            <button type="submit" class="submit-btn">Submit Enquiry</button>
+        </form>
+    </div>
+</div>
+<script>
+// Select elements using ID for precision
+const enquiryBtn1 = document.getElementById('enquiryBtn');
+const popup1 = document.getElementById('enquiryPopup');
+const closeBtn1 = document.querySelector('.close-btn');
+
+// Open the popup when clicking the bottom bar button
+enquiryBtn1.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevents the page from jumping or navigating
+    popup1.style.display = 'flex';
+});
+
+// Close the popup when clicking the "X"
+closeBtn1.addEventListener('click', function() {
+    popup1.style.display = 'none';
+});
+
+// Close the popup when clicking anywhere outside the form area
+window.addEventListener('click', function(e) {
+    if (e.target === popup1) {
+        popup1.style.display = 'none';
+    }
+});
+</script>
+      <a href="tel:+918748005495" class="footer-action footer-action-call" aria-label="Call Now">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call Now</span>
+      </a>
+      <a href="https://wa.me/918748005495" class="footer-action footer-action-whatsapp" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+    </div>
 </section>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2275,9 +2356,47 @@ document.addEventListener('DOMContentLoaded', () => {
       .rp-footer-section .social-link span {
         font-size: 15px;
         font-weight: 700;
-      } 
+      }
+
+      .mobile-footer-bar {
+        display: none;
+        position: fixed;
+        inset: auto 0 0 0;
+        z-index: 1000;
+        background: #07024b;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .footer-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex: 1 1 0;
+        min-height: 36px;
+        padding: 2px 1px;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .footer-action i {
+        font-size: 18px;
+      }
+
+     
+
+      .footer-action:hover {
+        opacity: 0.95;
+      }
+
     /* --- Mobile Responsive Rules --- */
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
+        .footer-bottom { margin-bottom: 70px; }
+        .mobile-footer-bar { display: flex; }
         .rp-footer-section .footer-container {
             grid-template-columns: 1fr;
             gap: 40px;
@@ -2285,7 +2404,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .rp-footer-section {
             padding: 50px 5% 25px 5%;
         }
-       
+    }
+    @media (min-width: 961px) {
+        .mobile-footer-bar { display: none; }
     }
 </style>
 </footer>
