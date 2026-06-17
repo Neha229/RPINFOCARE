@@ -478,12 +478,13 @@ a,button{transition:all .25s ease}
   .process-item h4{margin-top:8px}
 }
 /* Floating contact widgets: WhatsApp (left) and Email (right) */
-.floating-icon{position:fixed;bottom:16px;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;box-shadow:0 10px 30px rgba(2,18,47,0.18);z-index:9999;cursor:pointer;text-decoration:none}
+.floating-icon{position:fixed;bottom:8%;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;box-shadow:0 10px 30px rgba(2,18,47,0.18);z-index:9999;cursor:pointer;text-decoration:none}
 .floating-icon svg{width:24px;height:24px;display:block}
-.floating-whatsapp{left:16px;background:linear-gradient(180deg,#25D366,#1ebf57);color:#fff}
+.floating-whatsapp{left:16px;bottom: 8%;background:linear-gradient(180deg,#25D366,#1ebf57);color:#fff}
 .floating-email{right:16px;background:linear-gradient(180deg,#001748,#0d2348);color:#fff}
 .floating-icon:focus{outline:3px solid rgba(255,255,255,0.12);outline-offset:4px}
 .floating-icon:hover{transform:translateY(-4px)}
+
 @media(max-width:520px){
   .floating-icon{width:48px;height:48px;bottom:12px}
   .floating-whatsapp{left:12px}
