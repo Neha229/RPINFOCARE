@@ -395,7 +395,7 @@ body{margin:0;background:var(--bg-1);color:#0f2137;-webkit-font-smoothing:antial
   .main-nav a{display:block;padding:16px 20px;border-radius:0;width:100%;text-align:left}
   .nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;order:2;background:rgba(0,20,72,0.08);border:1px solid rgba(7,20,58,0.12);padding:10px 14px;border-radius:14px;cursor:pointer;min-width:48px;min-height:48px}
   .nav-toggle:hover{background:rgba(0,20,72,0.12)}
-  .cta.enquire{order:2;margin-left:0;padding:10px 16px;white-space:nowrap;flex-shrink:0}
+  .cta.enquire{display:none}
   .hero-grid{grid-template-columns:1fr}
   .hero-image{order:2}
   .hero-copy h1{font-size:48px}
